@@ -16,8 +16,6 @@ If you look again at the schematic, you'll see that SMCS0 and SMCS1 are used for
 
 If you keep scrolling down, you'll see that there's a page called Sound RAM Expansion (page 15 of 21 or page 77 of the pdf). On the left is every connection required to add another two 192KB banks of sound memory, including SMCS2-5.
 
-Looking through the Z80 ASM, I think I've narrowed it down to a subroutine that is called a few times that is located at $10A8 in the A ROM. This routine seems to be front loaded with a variable that is either 0, 1, 6 or 7. So I think the firmware is currently hard coded to only use the turbo memory.
-
 I initially thought there might be something in the PAL (IC62) From what I can tell, the purpose of IC62 is to manage where data is being sent by sending strobes depending on what combination of signals it receives. This effectively maps the ports the Z80 uses to communicate across the SP-12. For example, when IC62 receives and I/O write with A7 = 1, A6 = 0, A5 = 1, that port range is $A0-$BF which is for the LCD display (also qualified by IORQ = 1, RD = 1 and RW = 1). So IC62 then sends a signal to the LCD chip enable so it starts receiving data on. See the IC62 logic equations for reference.
 
 The outputs of IC62 that influence sound memory are CESM and and enable signal that connects to a 74HCT138 (IC41). The ENB signal to IC41 does have some influence in the sound memory world, but it doesn't have anything to do with the SMA16-18 signals. CESM however connects directly to the IC48 (ENB) that generates the SMCS signals. When CESM is active, it's just telling that a sound memory access cycle is happening, but it doesn't select which bank of sound memory is selected.
