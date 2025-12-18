@@ -20,6 +20,4 @@ I initially thought there might be something in the PAL (IC62) From what I can t
 
 The outputs of IC62 that influence sound memory are CESM and and enable signal that connects to a 74HCT138 (IC41). The ENB signal to IC41 does have some influence in the sound memory world, but it doesn't have anything to do with the SMA16-18 signals. CESM however connects directly to the IC48 (ENB) that generates the SMCS signals. When CESM is active, it's just telling that a sound memory access cycle is happening, but it doesn't select which bank of sound memory is selected.
 
-Where the bank selection actually happens is with 
-
 Some success I did have in my early hardware testin was condensing the 24 x 8KB memory chips into two SRAMs (one for MSB and one for LSB). I wrote some logic equations for a 22V10 GAL that replaced IC49 with an interposer PCB which fans out the CMCS signals, instead using the SMCS signals as an address line which has the effect of creating 8LB "windows" that the SP12 acesses within the larger SRAMs. So if the firmware is aboe to be understood and modified to utilise memory attached to SMCS2-5, you wouldn't need to purchase 48 memory chips, it could be done with four, possibly even two.
