@@ -1,0 +1,45 @@
+Name     SP12_IC49_22V10;
+PartNo   IC49;
+Date     24-Oct-2025;
+Revision 1.0;
+Device   g22v10;
+PIN  1 = nSMCS6;    /* IC49 pad 1  -SMCS6.D  */
+PIN  2 = SMA14;     /* IC49 pad 2  +SMA14.D */
+PIN  3 = SMA15;     /* IC49 pad 3  +SMA15.D */
+PIN  5 = nSMCS7;    /* IC49 pad 15 -SMCS7.D */
+PIN 12 = GND;
+PIN 14 = A14_1;     /* -> MSB SRAM pin 3  (A14)  */
+PIN 15 = A15_1;     /* -> MSB SRAM pin 31 (A15)  */
+PIN 16 = A16_1;     /* -> MSB SRAM pin 2  (A16)  */
+PIN 18 = CERAM1;    /* -> MSB SRAM pin 22 (CE#)  */
+PIN 19 = A14_2;     /* -> LSB SRAM pin 28 (A13)  */
+PIN 20 = A15_2;     /* -> LSB SRAM pin 3  (A14)  */
+PIN 21 = A16_2;     /* -> LSB SRAM pin 31  (A15)  */
+PIN 23 = CERAM2;   /* -> LSB SRAM pin 22 (CE#)  */
+PIN 24 = VCC;
+
+/* MSB SRAM (AS6C4008) */
+PIN 14 = A14_1;     /* -> MSB SRAM pin 3  (A14)  */
+PIN 15 = A15_1;     /* -> MSB SRAM pin 31 (A15)  */
+PIN 16 = A16_1;     /* -> MSB SRAM pin 2  (A16)  */
+PIN 18 = CERAM1;   /* -> MSB SRAM pin 22 (CE#)  */
+
+/* LSB SRAM (AS6C4008) */
+PIN 19 = A14_2;     /* -> LSB SRAM pin 28 (A13)  */
+PIN 20 = A15_2;     /* -> LSB SRAM pin 3  (A14)  */
+PIN 21 = A16_2;     /* -> LSB SRAM pin 31  (A15)  */
+PIN 23 = CERAM2;   /* -> LSB SRAM pin 22 (CE#)  */
+
+A14_1 = SMA14;
+A15_1 = SMA15;
+A16_1 = !nSMCS7;
+A14_2 = SMA14;
+A15_2 = SMA15;
+A16_2 = !nSMCS7;
+
+/* CE# gating (active low when RAM page selected; otherwise HIGH) */
+/* For active-low inputs, CE# low if N_SMCS6==0 OR N_SMCS7==0 */
+/* This prevents bus contention between EPROM sounds and RAM sounds */
+RAM_PAGE = !nSMCS6 # !nSMCS7;   /* OR */
+CERAM1  = !RAM_PAGE;  /* Output is active-low CE#: LOW on RAM page, HIGH on EPROM page */
+CERAM2  = !RAM_PAGE;
