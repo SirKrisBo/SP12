@@ -1,0 +1,48 @@
+Name     SP12_IC69_FROM_PAL12L6;
+PartNo   IC69;
+Date     24-Oct-2025;
+Revision 1.1;
+Device   g16v8a;
+
+PIN  1 = nUCK;
+PIN  2 = UCNT0;
+PIN  3 = UCNT1;
+PIN  4 = UCNT2;
+PIN  5 = UCNL0;
+PIN  6 = UCNL1;
+PIN  7 = UCNL2;
+PIN  8 = nCSSM;
+PIN  9 = nIORQ;
+PIN 10 = GND;
+PIN 11 = nWR;
+PIN 12 = A0;
+PIN 19 = nINPUT;
+PIN 20 = VCC;
+
+PIN 13 = nSMOE;
+PIN 14 = nSWEL;
+PIN 15 = nSWEH;
+PIN 16 = EN245_0;
+PIN 17 = EN245_1;
+PIN 18 = WAITDRV;
+
+TERM_RUN = UCNT0 & nUCK & !UCNT1 & UCNT2 & !nCSSM & !nIORQ;
+
+WAITDRV = !( nCSSM
+           #  nIORQ
+           # (UCNT0 & !nUCK & !UCNT1 & nINPUT & UCNT2)
+           # (UCNT0 & !nUCK & !UCNT1 & UCNT2 & UCNL0 & UCNL1 & UCNL2) );
+
+EN245_1 = !( TERM_RUN &  A0 );
+EN245_0 = !( TERM_RUN & !A0 );
+
+nSWEH   = !( TERM_RUN &  A0 & !nWR
+           #  (UCNT0 & nUCK & !UCNT1 & !nINPUT & UCNT2 & UCNL0 & UCNL1 & UCNL2) );
+
+nSWEL   = !( TERM_RUN & !A0 & !nWR
+           #  (UCNT0 & nUCK & !UCNT1 & !nINPUT & UCNT2 & UCNL0 & UCNL1 & UCNL2) );
+
+nSMOE   = !( (nINPUT & nWR)
+           #  (nINPUT & nCSSM)
+           #  (nINPUT & !UCNT2)
+           #  (!UCNT0 & nINPUT) );
