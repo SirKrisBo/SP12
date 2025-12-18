@@ -1,0 +1,1 @@
+/* These are logic equations for the IC62 PAL from the SP1200 sampler. I created these equartions by observing the behaviour of the original PAL12H6. To use, simply write the jed file to a 16V8BQL GAL.*/
