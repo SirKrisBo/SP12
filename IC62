@@ -1,5 +1,7 @@
 /* These are logic equations for the IC62 PAL from the SP1200 sampler. */
 /* I created these equartions by observing the behaviour of the original PAL12H6. To use, simply write the jed file to a 16V8BQL GAL.*/
+/* Alternatively, you can cope and paste the logic equations below into WinCupl and compile a jed file to write yourself. I used a TL866II programmer. */
+/* This PAL, plus 24 x 8kb 6264 memory chips, is what's required to upgrade a non-turbo SP12 to a turbo SP12 */
 Name     SP12_IC62_from_PAL12H6;
 PartNo   IC62;
 Date     24-Oct-2025;
