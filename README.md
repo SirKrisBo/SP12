@@ -26,3 +26,8 @@ I'll keep a clean ROM pair in this repo with no significant mods other than the 
 I only made these changes to make it easier to use all 32 pads. No other mods have been made to this firmware to keep it as stock as possible. I may make other changes but for now, here's a close to stock firmware that allows you to add more memory.
 
 I'm usually around on the SP12/SP1200 Facebook group. Feel free to ask any questions there.
+
+I've also now added a version of the firmware that is new defaults. It changes:
+- default tempo at 90.0bpm instead of 120.00
+- default threshold for sampling just a bit above input noise (mine is a little noisy)
+- default dynamic pads set to no
