@@ -1,3 +1,9 @@
+**NOTE IF YOU DECIDE TO DO THIS MOD**
+
+**You'll need to remove IC48 and pick up a cable that can interpose the socket and connect to the PCB. This means moving the fly wire from IC83 and the capacitor on IC48 to the underside of the PCB.**
+
+If you don't do this, you may lose memory on power on.
+
 This project increases total available sample memory in the SP12 to 20s.
 Note, I will not be held accountable for any damage to your SP12 or anyone attempting to modify their SP12. All repairs and mods should be carried out by a suitably qualified repairer.
 
@@ -16,8 +22,3 @@ I'll keep a clean ROM pair in this repo with no significant mods other than the 
 I only made these changes to make it easier to use all 32 pads. No other mods have been made to this firmware to keep it as stock as possible. I may make other changes but for now, here's a close to stock firmware that allows you to add more memory.
 
 I'm usually around on the SP12/SP1200 Facebook group. Feel free to ask any questions there.
-
-**NOTE IF YOU DECIDE TO DO THIS MOD**
-
-**You'll need to remove IC48 and pick up a cable that can interpose the socket and connect to the PCB. This means moving the fly wire from IC83 and the capacitor on IC48 to the underside of the PCB.**
-If you don't do this, you may lose memory on power on.
