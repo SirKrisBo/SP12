@@ -1,0 +1,50 @@
+Name     SP12_IC69;
+PartNo   IC69;
+Date     2025-10-01;
+Revision 1.1;
+Designer Kris;
+Device   g16v8a;
+
+PIN 10 = GND;
+PIN 20 = VCC;
+
+PIN  1 = N_UCK;      /* -UCK.D      (i1)  */
+PIN  2 = UCNT0;      /*             (i2)  */
+PIN  3 = UCNT1;      /*             (i3)  */
+PIN  4 = UCNT2;      /*             (i4)  */
+PIN  5 = UCNL0;      /*             (i5)  */
+PIN  6 = UCNL1;      /*             (i6)  */
+PIN  7 = UCNL2;      /*             (i7)  */
+PIN  8 = N_CSSM;     /* -CSSM.D     (i8)  */
+PIN  9 = N_IORQ;     /* -IORQ.D     (i9)  */
+PIN 11 = N_WR;       /* -WR.D       (i11) */
+PIN 12 = A0;         /* +A0.D       (i12) */
+PIN 19 = N_INPUT;    /* -INPUT.D    (i19) */
+
+PIN 13 = N_SMOE;     /* /o13 */
+PIN 14 = N_SWEL;     /* /o14 */
+PIN 15 = N_SWEH;     /* /o15 */
+PIN 16 = ENB_IC70;   /* /o16 */
+PIN 17 = ENB_IC71;   /* /o17 */
+PIN 18 = WAIT;   /* /o18 */
+
+TERM_RUN = UCNT0 & N_UCK & !UCNT1 & UCNT2 & !N_CSSM & !N_IORQ;
+
+WAIT = !( N_CSSM
+           #  N_IORQ
+           # (UCNT0 & !N_UCK & !UCNT1 & N_INPUT & UCNT2)
+           # (UCNT0 & !N_UCK & !UCNT1 & UCNT2 & UCNL0 & UCNL1 & UCNL2) );
+
+ENB_IC71 = !( TERM_RUN &  A0 );
+ENB_IC70 = !( TERM_RUN & !A0 );
+
+N_SWEH   = !( TERM_RUN &  A0 & !N_WR
+           #  (UCNT0 & N_UCK & !UCNT1 & !N_INPUT & UCNT2 & UCNL0 & UCNL1 & UCNL2) );
+
+N_SWEL   = !( TERM_RUN & !A0 & !N_WR
+           #  (UCNT0 & N_UCK & !UCNT1 & !N_INPUT & UCNT2 & UCNL0 & UCNL1 & UCNL2) );
+
+N_SMOE   = !( (N_INPUT & N_WR)
+           #  (N_INPUT & N_CSSM)
+           #  (N_INPUT & !UCNT2)
+           #  (!UCNT0 & N_INPUT) );
