@@ -2,6 +2,8 @@
 
 **You'll need to remove IC48 and pick up a cable that can interpose the socket and connect to the PCB. This means moving the fly wire from IC83 and the capacitor on IC48 to the underside of the PCB.**
 
+This is what I'm planning to use when my PCB arrives https://www.digikey.com.au/en/products/detail/assmann-wsw-components/ADIP-16Z-LC/924320
+
 If you don't do this, you may lose memory on power on.
 
 This project increases total available sample memory in the SP12 to 20s.
