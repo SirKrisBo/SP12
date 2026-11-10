@@ -4,6 +4,8 @@
 
 This is what I'm planning to use when my PCB arrives https://www.digikey.com.au/en/products/detail/assmann-wsw-components/ADIP-16Z-LC/924320
 
+I'll pull together a final BOM once I've received my first run of PCBs and tested. The PCB may change or may have errors, but I'm all for keeping things open.
+
 If you don't do this, you may lose memory on power on.
 
 This project increases total available sample memory in the SP12 to 20s.
