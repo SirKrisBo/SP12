@@ -1,6 +1,6 @@
 **NOTE IF YOU DECIDE TO DO THIS MOD**
 
-**You'll need to remove IC48 and pick up a cable that can interpose the socket and connect to the PCB. This means moving the fly wire from IC83 and the capacitor on IC48 to the underside of the PCB.**
+**You'll need to remove IC48 and pick up a cable that can interpose the socket and connect to the PCB. This means moving the fly wire from IC83 and the capacitor on IC48 to the underside of the PCB. See the install instructions and pages 94-95 of the service manual.**
 
 This is what I'm planning to use when my PCB arrives https://www.digikey.com.au/en/products/detail/assmann-wsw-components/ADIP-16Z-LC/924320
 
