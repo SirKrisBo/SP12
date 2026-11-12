@@ -8,7 +8,7 @@ This project increases total available sample memory in the SP12 to 20s.
 
 Note, I will not be held accountable for any damage to your SP12 or anyone attempting to modify their SP12. All repairs and mods should be carried out by a suitably qualified repairer.
 
-I've been annotating the source code for a but over a year now but I hadn't done much with AI. I fired up Claude a few days ago and after the ground work I had done identifying code from data (and some 1541 code I found that the SP12 bit bangs directly via the disk port) turns out I had made more than enough progress to get this moving.
+I've been annotating the source code for a but over a year now but I hadn't done much with AI. There's been a lot of progress with firmware mods recently so when Chase Smith shared with me how he managed to get the SP12 to use 20s of Ram, I fired up Claude. Turns out that after the ground work I had done identifying code from text/data and annotating the source, I had made more than enough progress to get this moving.
 
 If anyone is interested in developing for the SP12, it can be useful to fully understand the hardware (especially for an emullator). I've previously decoded the two PALs IC62 (turbo only) and IC69. I've also decoded the PROMs IC67 and IC88 so the full schematic can be understood. Relevant files are in this repo.
 
