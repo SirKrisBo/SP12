@@ -43,7 +43,7 @@ Ribbon cable      3365/16 300              https://www.digikey.com.au/en/product
 SP12 Parts
 Part              Value                    Link
 IC26 PAL          16V8 (turbo only)        https://www.digikey.com.au/en/products/detail/microchip-technology/ATF16V8B-15PU/1118926
-CN2               36-way IDC pin socket    https://www.digikey.com.au/en/products/detail/same-sky-formerly-cui-devices/SSK03-MPH-254-B18/28772107
+CN2               36-way IDC pin header    https://www.digikey.com.au/en/products/detail/same-sky-formerly-cui-devices/SSK03-MPH-254-B18/28772107
 CN3               36-way IDC pin header    https://www.digikey.com.au/en/products/detail/same-sky-formerly-cui-devices/SSK03-MPH-254-B18/28772107
 
 **Preparing your SP12**
@@ -74,6 +74,7 @@ CN3               36-way IDC pin header    https://www.digikey.com.au/en/product
 3. Replace all PCB screws.
 4. Screw VR4 back to the chassis.
 5. Reconnect CN1, CN5, CN6 and replace the top shell.
-6. Let her rip!
+6. Clear all sound and sequence memory.
+7. Let her rip!
 
 Please raise an issue in the repo if I've missed any steps.
