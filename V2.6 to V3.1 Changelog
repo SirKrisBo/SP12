@@ -24,6 +24,7 @@ V3.1 Rambo is a modified firmware for the E-Mu SP12 with Rambo 20 second sound m
 - I identified an bug where if a sound was still decaying when loading from MIDI starts, part of the incoming data could go to the wrong memory bank. This has been fixed.
 - The full 20s will save to 5 disks. The firmware was modified to add a counter for disk selection. V2.6 stopped at 2 as there was not enough memory to fill more than two disks.
 - Load sound # has also been updated to select the correct disk number.
+- Loading a factory sound bank will discard any pads pointing to bank 0/1. This is intended to play factory ROM sounds but because the ROMs have been removed, it will play junk.
 - If the incorrect disk is selected, the refusal message has been changed from "Wrong File Type" to "Insert Disk #X".
 - There was a bug in the sequence catelog that would exclude certain segments. This has been fixed.
 - THere was a bug in the sequence catelog that continue to display segments that have been deleted. This has been fixed.
