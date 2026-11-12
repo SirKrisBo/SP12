@@ -1,0 +1,35 @@
+SP-12 Rambo 3.1: release notes
+
+1. What it is
+V3.1 Rambo is a modified firmware for the E-Mu SP12 with Rambo 20 second sound memory PCB. It is based on V2.6 and retains most of the original features.
+
+2. Requirements
+- The 20s PCB with all sound ROMs and RAMs removed (program/sequence ROMs/RAMs remain)
+- The firmware no longer checks for turbo or non-turbo and is not compatible with a standard SP12 or SP12 Turbo.
+- The Turbo PAL bust be fitted at IC62 and sequence RAMs at IC117-IC119.
+- SP12_RAMBO_V3.1_ROM_A.bin burned to a 27C128 at IC114 and SP12_RAMBO_V3.1_ROM_B.bin burned to a 278C64 at IC115.
+- Clear all sounds and sequences after installing any new revision.
+
+3. Changes from V2.6
+- 20 seconds of sample memory in eight banks of 2.5s. Maximum per sample length remains 2.5s. 
+- Mem Remaining updated to count all 20s of available sound memory.
+- No factory sounds available as the ROMs have been removed.
+- All 32 pads are now user pads from A1 to D8 and can be assigned when sampling. Defalt decay, tune range and truncate now work on all pads.
+- On the sample -assign voice screen and the loop/truncate screens, both the number pad and the drum pads may be used to select the sound.
+- Entering the sample screen defaults to the first empty pad from A1.
+- All odd numbered pads default to output 7 and all even numbered pads default to output 8.
+- Default tempo is now 90.0 bpm after clear all memory. Stored songs still retain their saved tempo.
+- Dynamic buttons are off by default after clear all memory.
+- Sampling threshhold set to the start of the second character on the LCD after clear all memory so arming won't start sampling if your SP12 input is a little noisy.
+- I identified an bug where if a sound was still decaying when loading from MIDI starts, part of the incoming data could go to the wrong memory bank. This has been fixed.
+- The full 20s will save to 5 disks. The firmware was modified to add a counter for disk selection. V2.6 stopped at 2 as there was not enough memory to fill more than two disks.
+- Load sound # has also been updated to select the correct disk number.
+- If the incorrect disk is selected, the refusal message has been changed from "Wrong File Type" to "Insert Disk #X".
+- There was a bug in the sequence catelog that would exclude certain segments. This has been fixed.
+- THere was a bug in the sequence catelog that continue to display segments that have been deleted. This has been fixed.
+- Cassette save/load has been removed. Disk - 1 now displays "Cassette Gone".
+- The turbo/non-turbo check has also been removed.
+- Memory management has been designed so that the first two 2.5s samples will populate banks 6 and 7. This may enable compatibility with V2.6
+
+4. Free ROM space
+- 755 bytes of free space remain in ROM B for any future modifications or additional features.
