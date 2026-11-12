@@ -21,16 +21,15 @@ V3.1 Rambo is a modified firmware for the E-Mu SP12 with Rambo 20 second sound m
 - Default tempo is now 90.0 bpm after clear all memory. Stored songs still retain their saved tempo.
 - Dynamic buttons are off by default after clear all memory.
 - Sampling threshold set to the start of the second character on the LCD after clear all memory so arming won't start sampling if your SP12 input is a little noisy.
-- I identified an bug where if a sound was still decaying when loading from MIDI starts, part of the incoming data could go to the wrong memory bank. This has been fixed.
-- The full 20s will save to 5 disks. The firmware was modified to add a counter for disk selection. V2.6 stopped at 2 as there was not enough memory to fill more than two disks.
+- There was a bug where if a sound was still decaying when loading from MIDI starts, part of the incoming data could go to the wrong memory bank. This has been fixed.
+- The full 20s will now save to 5 disks. A counter has been added for disk selection so the correct disk number appears in the prompt.
 - Load sound # has also been updated to select the correct disk number.
-- Loading a factory sound bank will discard any pads pointing to bank 0/1. This is intended to play factory ROM sounds but because the ROMs have been removed, it will play junk.
 - If the incorrect disk is selected, the refusal message has been changed from "Wrong File Type" to "Insert Disk #X".
 - There was a bug in the sequence catalog that would exclude certain segments. This has been fixed.
 - There was a bug in the sequence catalog that continue to display segments that have been deleted. This has been fixed.
 - Cassette save/load has been removed. Disk - 1 now displays "Cassette Gone".
 - The turbo/non-turbo check has also been removed.
-- Memory management has been designed so that the first two 2.5s samples will populate banks 6 and 7. This may enable compatibility with V2.6
+- Memory management has been designed so that the first two 2.5s samples will populate banks 6 and 7. This may enable compatibility with V2.6 but as soon as banks 0, 1, 2, 3, 4 or 5 are used saves won't be compatible.
 
 4. Free ROM space
 - 755 bytes of free space remain in ROM B for any future modifications or additional features.
