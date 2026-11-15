@@ -27,6 +27,8 @@ CN2               36-way IDC pin socket    https://www.digikey.com.au/en/product
 CN3               36-way IDC pin header    https://www.digikey.com.au/en/products/detail/same-sky-formerly-cui-devices/SSK03-MPH-254-B18/28772107
 J1                16-way IDC pin header    https://www.digikey.com.au/en/products/detail/same-sky-formerly-cui-devices/SSK03-MPH-254-B8/28772204
 
+(note: you can use a 25KB SRAM for LSB1 but the AS6C4008-55PCN are a reasonable price and easy to find in stock)
+
 36-way Ribbon     Cable
 Part              Value                    Link
 36-way IDC        D89136-0101HK            https://www.digikey.com.au/en/products/detail/3m/D89136-0101HK/1885884
