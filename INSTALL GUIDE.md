@@ -36,7 +36,7 @@ My IDC tool       HT-214                   https://www.aliexpress.com/item/10050
 
 16-way Ribbon Cable
 Part              Value                    Link
-IC48 adaptor      ADIP 16Z-LC              https://www.digikey.com.au/en/products/detail/assmann-wsw-components/ADIP-16Z-LC/924320
+IC48 adaptor      ADIP 16Z-LC              https://www.digikey.com.au/en/products/detail/cw-industries/CWR-130-16-0203/1122540
 16-way IDC        D89136-0101HK            https://www.digikey.com.au/en/products/detail/cvilux-usa/CA2116SA100/15519178
 Ribbon cable      3365/16 300              https://www.digikey.com.au/en/products/detail/3m/3365-16-300/1107219
 
@@ -55,10 +55,11 @@ CN3               36-way IDC pin header    https://www.digikey.com.au/en/product
 6. **Non-turbo only:** Program the jed file from the repo to a 16V8 GAL and replace the PAL at IC62.
 7. Remove IC114 (ROM A 27C128) and IC115 (ROM B 27C64) and program the ROM A and ROM B files from the repo to new 27C128 and 27C64.
 8. Check if your PCB has ECO 144 on the top or bottom of the main PCB. Refer to pages 94-95 of the SP12 Service Manual and ECO144.jpg in the repo for reference. ECO 144 connects a 1k resistor via fly wire between pin 2 of IC83 and pin 5 of IC48 and a 0.1uF cap between IC48 pins 5 and 8.
-9. **If your PCB has ECO144 on the underside, skip the next step.**
-10. If your PCB has ECO144 on the top side of the PCB, remove the fly wire/1k resistor and the 0.1uF cap from IC83/IC48 and solder to the underside of the PCB.
-11. Remove IC48.
-12. Solder a 36-way 
+9. Remove the capacitor connected to pins 5 and 8 of IC48 (applies to ECO144 on either top or bottom).
+10. If ECO144 is on the bottom side of your PCB, remove the 1k resistor and flywire and connect one end to IC83 pin 2 on the top side.
+11. If ECO144 is on the top side of your PCB, desolder the flywire from pin 5 of IC48.
+12. Remove IC48.
+13. Solder a 36-way pin header to both CN2 and CN3.
 
  **Bulding and connecting the board**
 1. Build the Rambo PCB as per the schematic in the repo. Ensure CN2 is populated with a female IDC on the underside of the PCB and CN3 is populated with a pin header on the top side of the PCB.
@@ -67,6 +68,7 @@ CN3               36-way IDC pin header    https://www.digikey.com.au/en/product
 4. Connect a 36-way ribbon cable from CN3 on the SP12 PCB to the Rambo PCB.
 5. Connect a 16-way ribbon cable from IC48 socket to J1.
 6. Connect the Rambo PCB to the SP12 PCB via CN2 on the underside of the Rambo PCB.
+7. Connect the other end of the flywire from IC83 pin 2 to J2 (single pin header). There's no need to buy a pin, just feed the end of the wire up through the underside of the PCB and solder on top of the Rambo PCB.
 
  **Reassembling your SP12**
 1. Place the SP12 PCB back in the chassis.
