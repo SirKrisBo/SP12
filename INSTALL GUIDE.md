@@ -20,7 +20,7 @@ C1                0.1uF                    https://www.digikey.com.au/en/product
 C2                10uF 16V                 https://www.digikey.com.au/en/products/detail/panasonic-industry/ECA-1CM100I/2688653
 C3                0.1uF                    https://www.digikey.com.au/en/products/detail/vishay-beyschlag-draloric-bc-components/K104K10X7RF5UH5/2356754
 C4                0.1uF                    https://www.digikey.com.au/en/products/detail/vishay-beyschlag-draloric-bc-components/K104K10X7RF5UH5/2356754
-C5                10uF 16V                 https://www.digikey.com.au/en/products/detail/panasonic-industry/ECA-1CM100I/2688653
+C5                0.1uF                    https://www.digikey.com.au/en/products/detail/vishay-beyschlag-draloric-bc-components/K104K10X7RF5UH5/2356754
 R1                10K 1/4W                 https://www.digikey.com.au/en/products/detail/yageo/MFR-25FRF52-10K/14626
 R2                10K 1/4W                 https://www.digikey.com.au/en/products/detail/yageo/MFR-25FRF52-10K/14626
 CN2               36-way IDC pin socket    https://www.digikey.com.au/en/products/detail/sullins-connector-solutions/PPPC182LFBN-RC/810257
