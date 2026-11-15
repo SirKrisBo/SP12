@@ -1,6 +1,6 @@
 **NOTE IF YOU DECIDE TO DO THIS MOD**
 
-**You'll need to remove IC48 and pick up a cable that can interpose the socket and connect to the PCB. This means moving the fly wire from IC83 and the capacitor on IC48 to the underside of the PCB. See the install instructions and pages 94-95 of the service manual.**
+**You'll need to remove IC48 and pick up a cable that can interpose the socket and connect to the PCB. This means moving the fly wire from IC83 and the capacitor on IC48 and reconnecting as per the install instructions (see also pages 94-95 of the service manual for reference).**
 
 If you don't do this, you may lose memory on power on.
 
